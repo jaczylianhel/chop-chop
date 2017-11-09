@@ -95,11 +95,11 @@
     <footer>
 
         <div class='first foot'>
-            <a href="#">-home</a><br>
+            <a href="#">-home</a>
             <a href="#">-products</a>
         </div>
         <div class="second foot">
-            <a href="#">-about us</a><br>
+            <a href="#">-about Us</a><br>
             <a href="#">-contact</a>
         </div>
 
@@ -170,25 +170,22 @@
                 return false;
             });
             $("#ipsum").click(function() {
-                setTimeout(function() {
-                    const word = 'ipsum';
-                    t = document.getElementById('ips');
-                    var tag = t.getElementsByTagName('td').length;
-                    for (var j = 0; j < tag; j++) {
-                        var td = t.getElementsByTagName('td')[j].innerHTML;
-
-                        var arr = td.split(" ")
-                        var length = arr.length;
-                        for (var x = 0; x < length; x++) {
-                            if (arr[x].toLowerCase() == word) {
-                                arr.splice(x, 1, '<span class="red">' + word + '</span>');
-                            }
-                            var arrNew = arr.join(" ");
-                            t.getElementsByTagName('td')[j].innerHTML = arrNew;
+                const word = 'ipsum';
+                var t = document.getElementById('ips');
+                var tag = t.getElementsByTagName('td').length;
+                for (var j = 0; j < tag; j++) {
+                    var td = t.getElementsByTagName('td')[j].innerHTML;
+                    var arr = td.split(" ")
+                    var length = arr.length;
+                    for (var x = 0; x < length; x++) {
+                        if (arr[x].toLowerCase() == word) {
+                            arr.splice(x, 1, '<span class="red">' + word + '</span>');
                         }
-                    } //koniec pętli J
-                }, 3000);
-            }); //koniec funkcji ipsum
+                    }
+                    var arrNew = arr.join(" ");
+                    t.getElementsByTagName('td')[j].innerHTML = arrNew;
+                }
+            });
         });
 
     </script>

@@ -232,7 +232,7 @@ footer .foot {
 }
 
 .second a {
-    padding-right: 5px;
+    padding-right: 50px;
     text-decoration-line: none;
     color: #fff;
 }
@@ -259,8 +259,33 @@ footer {
     color: red;
 }
 
+.black {
+    color: black;
+}
+
 @media (orientation: portrait) {
     #form {
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
     }
+    .submit {
+        width: 100%;
+    }
+    footer .foot {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 10px;
+
+    }
+    .first a {
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    #logo {
+        display: none;
+    }
+    .art {
+        margin: 0;
+    }
+}
