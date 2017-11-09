@@ -1,5 +1,6 @@
 <html>
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -13,6 +14,7 @@
 </head>
 
 <body>
+
     <div id="logo">
         <center><img src="logo.png" alt="logo"></center>
     </div>
@@ -20,7 +22,7 @@
     <header>
         <nav>
             <ul>
-                <a class="menu active" href="potwierdzenie.html">Home</a><a class="menu" href="#">Products</a><a class="menu" href="#">About us</a><a class="menu" href="#">Contact</a>
+                <a class="class-menu menu active" href="potwierdzenie.html">Home</a><a class="menu" href="#">Products</a><a class="menu" href="#">About us</a><a class="menu" href="#">Contact</a>
             </ul>
         </nav>
     </header>
@@ -34,7 +36,6 @@
             }else{ echo '<h1>This is just a sample page</h1>';}
             
             ?>
-
             <center><button id="ipsum"> push the button</button></center>
         </div>
 
@@ -44,10 +45,10 @@
                 <td>A much longer heading title</td>
                 <td>A heading title</td>
             </thead>
-            <tbody>
+            <tbody id='ips'>
                 <tr>
                     <td>
-                        <img src="logo_greengo.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis felis fermentum, dictum odio ut.
+                        <img src="logo_greengo.jpg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis felis fermentum, dictum odio ut.
                         <p class="clear"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur </p>
                         <p class="hide1">orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                     </td>
@@ -72,7 +73,7 @@
     </section>
     <div class="contact">
         <h1>Contact us</h1>
-        <form id="form" method="post" action="post.php">
+        <form id="form" method="get" action="post.php">
             <div class="put-left">
                 <input class="left" type="text" name="name" id="name" value="name" /><br>
                 <input class="left" type="text" name="email" id="email" value="email" /></br>
@@ -86,7 +87,10 @@
             </div>
         </form>
     </div>
+
     <div id="info"></div>
+
+
     <center><button id="scroll" class="top">back to top </button></center>
     <footer>
 
@@ -143,13 +147,48 @@
                     $answer.fadeOut();
                 }
             });
-
-            $('.active').click(function() {
+            $('.submit').click(function() {
+                $('.contact').toggleClass("contact2");
                 console.log('click');
-                var url = $(this).attr('href');
-                $('#info').load(url); // + ' #newsItem');
+                // return false;
+            });
+            $('#ipsum').hover(function() {
+                $('header nav a').toggleClass('active');
+            })
+            $('#form').submit(function() {
+
+                var dane = $(this).serialize();
+                $.post('post.php', dane, processdata);
+
+                function processdata(data) {
+                    if (data) {
+                        $('#info').html('<center><p>Dziękujemy za wysłanie formularza z następującymi danymi</p></center>');
+                    } else {
+                        $('#info').html('<center><p>Brak danych do wyświetlenia</p></center>')
+                    }
+                }
                 return false;
-            }); //Koniec funkcji click
+            });
+            $("#ipsum").click(function() {
+                setTimeout(function() {
+                    const word = 'ipsum';
+                    t = document.getElementById('ips');
+                    var tag = t.getElementsByTagName('td').length;
+                    for (var j = 0; j < tag; j++) {
+                        var td = t.getElementsByTagName('td')[j].innerHTML;
+
+                        var arr = td.split(" ")
+                        var length = arr.length;
+                        for (var x = 0; x < length; x++) {
+                            if (arr[x].toLowerCase() == word) {
+                                arr.splice(x, 1, '<span class="red">' + word + '</span>');
+                            }
+                            var arrNew = arr.join(" ");
+                            t.getElementsByTagName('td')[j].innerHTML = arrNew;
+                        }
+                    } //koniec pętli J
+                }, 3000);
+            }); //koniec funkcji ipsum
         });
 
     </script>

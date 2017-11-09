@@ -18,6 +18,7 @@ nav {
 
 #logo {
     position: absolute;
+
     left: 47%;
     z-index: -1;
 }
@@ -39,8 +40,10 @@ nav {
     color: #000;
 }
 
+.class-menu,
 .active {
     border-bottom: 1px solid #3AF1E2;
+    color: silver;
 }
 
 section {
@@ -123,6 +126,11 @@ table tbody img {
     font-size: 1.5rem;
 }
 
+.contact2 {
+    display: none;
+}
+
+
 #form {
     width: 80%;
     height: 41%;
@@ -176,6 +184,8 @@ table tbody img {
     box-shadow: 0 8px 2px -2px #3CC7BB;
     margin-top: 10px;
     margin-bottom: 100px;
+    color: #32CFC2;
+    font-size: 1.3rem;
 }
 
 .submit:hover {
@@ -245,79 +255,12 @@ footer {
     padding: 40px 0;
 }
 
-
-/*
-footer ul {
-    margin: 0;
-    padding: 0;
+.red {
+    color: red;
 }
 
-footer .foot {
-    height: 20%;
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-
-}
-
-footer table {
-    margin-left: 100px;
-}
-
-footer table a {
-    width: 100px;
-    text-decoration-line: none;
-    margin-bottom: 10px;
-}
-
-.menu-foot {
-    display: inline-block;
-    margin-right: 60px;
-    color: #fff;
-}
-
-.menu-foot-left {
-    float: left;
-    width: 30%;
-    padding-top: 30px;
-}
-
-.menu-foot-right {
-    float: right;
-    width: 25%;
-    padding: 40px;
-}
-
-.menu-foot-middle {
-    padding-top: 35px;
-    color: #000;
-    font-size: 2rem;
-    margin-top: 0;
-}
-
-
-.twitter,
-.facebook {
-    width: 50px;
-    height: 50px;
-    background-color: #000;
-    border-radius: 25px;
-}
-
-.twitter {
-    margin-left: 200px;
-}
-
-.fa-twitter {
-    padding: 7px;
-}
-
-.fa-facebook {
-    padding: 10px 0px 0 13px;
-}
-
-footer table td {
-    padding: 0px;
-    margin: 0;
-    width: 150px;
-}
+@media (orientation: portrait) {
+    #form {
+        margin: 0;
+        padding: 0;
+    }
