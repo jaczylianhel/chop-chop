@@ -1,0 +1,18 @@
+1. Wszystkie informacje dotyczące pisania kodu w JavaScript opisałem w komentarzach <script> (przed znacznikiem ZAMYKAJCYM body)
+2. Wszystko wykonałem w czasie ok 7-8 godzin.
+3. W zadaniu związanym z wysłaniem formularza, wysyłam wszystkie informacje do pliku post.php. Ten plik sprawdza, czy wszystkie dane zostały wysłane metodą post. Jeżeli jedna z danych będzie niekompletna, wtedy wyśle na strone index.php wartość false. W przeciwnym razie wyśle True.
+W pliku index.php ustawilem 'nasluchiwanie' po wysłaniu formularza i w zależności, jaką otrzyma odpowiedz, tak zmieni wartość strony. W obydwu przypadkach (true jak i false) usunie formularz i wstawi tekst z właściwą informacją. 
+5. Nie zrobilem ostatniego polecenia z PHP poniewaz napisalem ze wysle dzisiaj rozwiazanie wiec trzymam sie terminu. Oczywiscie bedę pracowal nad skonczeniem ostatniego briefu, lecz zajmie mi to troche wiecej czasu
+6. 2 zmienne którą Państwo mogą przekazać to: 
+
+text_c - ustawia kolor 
+text - ustawia tekst 
+
+Jeżeli chcemy wyświetlić example w kolorze czerwonym to nalezy wpisac w przegladarke: index.php?text_c=red&text=example
+
+Ciekawostka:
+Po drodze natknąłem się na ciekawostkę w kodzie php, że jeżeli ustawimy tylko jedną wartośc domyslną text_c (zamiast text), mozemy wyświetlić nazwę koloru w tym własnie kolorze. (yellow wyswietlone na zolto, green wyswietlone na zielono)
+
+Dziękuje za ocenę mojej pracy i liczę na odpowiedź z Państwa strony. 
+Pozdrawiam
+Paweł Anioł
